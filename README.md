@@ -21,7 +21,7 @@ Options:
 Install
 -------
 ```sh
-npm install -g dev-proxy
+npm install -g dev-proxy-win
 # will automatically generate a self-signed cert/key
 ```
 
