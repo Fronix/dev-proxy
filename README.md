@@ -1,3 +1,5 @@
+Forked and published for simplicity only, all credit goes to original creators. Only needed this for some project who have windows users but the original project was dead.
+
 dev-proxy
 ===============
 
@@ -19,7 +21,7 @@ Options:
 Install
 -------
 ```sh
-npm install -g dev-proxy
+npm install -g dev-proxy-win
 # will automatically generate a self-signed cert/key
 ```
 
