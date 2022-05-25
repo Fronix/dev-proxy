@@ -2,10 +2,22 @@ var pem = require("pem");
 var fs = require("fs");
 var path = require("path");
 
-pem.createCertificate({ selfSigned:true }, function(err, keys){
-  if (!fs.existsSync(path.join(__dirname, '..', 'resources'))) {
-    fs.mkdirSync(path.join(__dirname, '..', 'resources'));
+pem.createCertificate({ selfSigned: true }, function (err, keys) {
+  if (err) {
+    console.log(err);
+    return;
   }
-  fs.writeFileSync(path.join(__dirname, '..', 'resources', 'localhost.key'), keys.serviceKey);
-  fs.writeFileSync(path.join(__dirname, '..', 'resources', 'localhost.cert'), keys.certificate);
+
+  if (!fs.existsSync(path.join(__dirname, "..", "resources"))) {
+    fs.mkdirSync(path.join(__dirname, "..", "resources"));
+  }
+
+  fs.writeFileSync(
+    path.join(__dirname, "..", "resources", "localhost.key"),
+    keys.serviceKey
+  );
+  fs.writeFileSync(
+    path.join(__dirname, "..", "resources", "localhost.cert"),
+    keys.certificate
+  );
 });
