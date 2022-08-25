@@ -14,7 +14,7 @@ pem.createCertificate({ selfSigned: true }, function (err, keys) {
 
   fs.writeFileSync(
     path.join(__dirname, "..", "resources", "localhost.key"),
-    keys.serviceKey
+    keys.clientKey
   );
   fs.writeFileSync(
     path.join(__dirname, "..", "resources", "localhost.cert"),
